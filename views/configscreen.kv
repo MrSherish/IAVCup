@@ -1,0 +1,63 @@
+<ConfigScreen@Screen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        padding: 50
+
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+            size_hint: (None, None)
+            scale: 1
+            mipmap: True
+            source: 'assets/images/logo.png'
+
+        GridLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: (None, None)
+            size: self.minimum_size # wrap children
+            rows: 2
+            cols: 2
+            padding: 10
+            spacing: 10
+            Label:
+                text: 'Node count'
+                size_hint: (None, None)
+                width: self.texture_size[0]
+                height: self.texture_size[1]
+            TextInput:
+                id: node_count
+                size_hint: (None, None)
+                text: '4'
+                width: 50
+                height: 50
+            Label:
+                text: 'Marker per node count'
+                size_hint: (None, None)
+                width: self.texture_size[0]
+                height: self.texture_size[1]
+            TextInput:
+                id: marker_count
+                size_hint: (None, None)
+                text: '6'
+                width: 50
+                height: 50
+        Button:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            size_hint: (None, None)
+            width: 150
+            height: 50
+            text: 'Go'
+            anchor_y: 'bottom'
+            anchor_x: 'left'
+
+            on_press: root.start()

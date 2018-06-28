@@ -1,0 +1,19 @@
+<MainScreen@Screen>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        StackLayout:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            id: nodes_container
+            orientation: 'lr-tb'
+            spacing: 10
+            padding: 10
+        Button:
+            size_hint: (None, None)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            text: 'Randomize'
+            on_press: root.root_node.randomize()

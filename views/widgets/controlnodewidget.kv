@@ -1,0 +1,12 @@
+<ControlNodeWidget@StackLayout>:
+    id: marker_container
+    size_hint: (None, None)
+    orientation: 'tb-lr'
+    height: 100 + 100*len(root.control_node.marker_list)
+    Button:
+        size_hint: (None, None)
+        width: 100
+        height: 30
+        text: str(root.control_node.id)
+        background_color: 0, 0, 1, 1
+        on_press: root.control_node.randomize()

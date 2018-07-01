@@ -14,6 +14,11 @@
             padding: 10
         Button:
             size_hint: (None, None)
-            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            pos_hint: {'center_x': 0.3, 'center_y': 0.2}
             text: 'Randomize'
             on_press: root.root_node.randomize()
+        Button:
+            size_hint: (None, None)
+            pos_hint: {'center_x': 0.7, 'center_y': 0.2}
+            text: 'Send config'
+            on_press: root.root_node.commit_config()
